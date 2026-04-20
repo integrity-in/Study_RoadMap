@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -7,7 +9,6 @@
     <meta name="apple-mobile-web-app-title" content="MIT Scholar">
     
     <link rel="apple-touch-icon" href="https://via.placeholder.com/180/A31F34/FFFFFF?text=MIT">
-    
     <meta name="theme-color" content="#A31F34">
 
     <title>MIT Scholar Roadmap</title>
@@ -23,16 +24,14 @@
         body { 
             font-family: 'Inter', sans-serif; 
             scroll-behavior: smooth; 
-            /* viewport-fit=cover와 함께 사용하여 상단 노치 및 하단 바 영역 여백 확보 */
+            /* 최적화: 상단 노치 및 하단 바 영역 여백 자동 확보 */
             padding-top: env(safe-area-inset-top);
             padding-bottom: env(safe-area-inset-bottom);
             -webkit-tap-highlight-color: transparent;
             background-color: #FAFAFA;
-            /* 앱처럼 텍스트 선택 방지 (선택 사항) */
             -webkit-user-select: none;
         }
         
-        /* iPhone 최적화 하단 내비게이션 */
         .mobile-nav { 
             display: flex; 
             position: fixed; 
@@ -47,24 +46,21 @@
             padding: 12px 0; 
             border-top: 0.5px solid rgba(0,0,0,0.1); 
             padding-bottom: calc(12px + env(safe-area-inset-bottom)); 
-            box-shadow: 0 -1px 0 rgba(0,0,0,0.05);
         }
+        .mobile-nav a { font-size: 10px; color: #6B7280; text-decoration: none; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        /* 햅틱 반응 느낌을 주는 카드 애니메이션 보완 */
         .course-card { 
             background: #FFFFFF;
             border-radius: 18px;
             padding: 20px;
             border: 1px solid #F3F4F6;
-            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
-            -webkit-user-drag: none;
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
-        .course-card:active { 
-            transform: scale(0.96); /* 터치 시 눌리는 효과 강화 */
-            background-color: #F9FAFB;
-        }
+        .course-card:active { transform: scale(0.96); background-color: #F9FAFB; }
 
-        /* 상단 헤더 스티키 효과 보완 (Dynamic Island 대응) */
         .stage-header { 
             position: sticky; 
             top: env(safe-area-inset-top); 
@@ -77,7 +73,54 @@
             border-bottom: 0.5px solid #E5E7EB;
         }
 
-        /* 스크롤바 숨기기 */
+        .badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 800; }
+        .b-cs { background: #ECFDF5; color: #059669; }
+        .b-math { background: #EFF6FF; color: #2563EB; }
+        .b-phys { background: #FFFBEB; color: #D97706; }
+        
         ::-webkit-scrollbar { display: none; }
     </style>
 </head>
+<body class="text-gray-900">
+
+    <nav class="mobile-nav">
+        <a href="#stage1">Freshman</a>
+        <a href="#stage2">Sophomore</a>
+        <a href="#stage3">Junior</a>
+        <a href="#stage4">Senior</a>
+        <a href="#stage5">Grad</a>
+    </nav>
+
+    <div class="pb-32">
+        <header class="bg-white px-6 py-12 border-b border-gray-100">
+            <div class="max-w-3xl mx-auto">
+                <div class="w-12 h-12 bg-red-800 text-white flex items-center justify-center font-bold text-xl rounded-xl mb-6 shadow-lg italic">MIT</div>
+                <h1 class="text-4xl font-extrabold tracking-tight">The Definitive<br>Scholar Map</h1>
+                <p class="text-gray-500 mt-4 font-medium">MIT Undergraduate Sequence</p>
+            </div>
+        </header>
+
+        <main class="max-w-3xl mx-auto px-6 pt-10 space-y-16">
+            <section id="stage1">
+                <div class="stage-header">
+                    <h2 class="text-2xl font-extrabold">Phase I: Freshman</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/" target="_blank" class="course-card">
+                        <span class="badge b-cs">CS 6.001</span>
+                        <h3 class="font-bold text-lg mt-3">SICP</h3>
+                        <p class="text-xs text-gray-500 mt-2">Structure & Interpretation of Computer Programs.</p>
+                    </a>
+                    <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" target="_blank" class="course-card">
+                        <span class="badge b-math">MATH 18.01</span>
+                        <h3 class="font-bold text-lg mt-3">Calculus I</h3>
+                        <p class="text-xs text-gray-500 mt-2">Single Variable Calculus.</p>
+                    </a>
+                </div>
+            </section>
+
+            </main>
+    </div>
+
+</body>
+</html>

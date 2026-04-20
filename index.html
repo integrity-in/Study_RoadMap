@@ -24,21 +24,19 @@
         body { 
             font-family: 'Inter', sans-serif; 
             scroll-behavior: smooth; 
-            /* iPhone 14 Pro Dynamic Island 및 하단 바 여백 확보 */
             padding-top: env(safe-area-inset-top);
             padding-bottom: env(safe-area-inset-bottom);
             -webkit-tap-highlight-color: transparent;
             background-color: #FAFAFA;
         }
         
-        /* 하단 내비게이션 바 (유리 효과) */
         .mobile-nav { 
             display: flex; 
             position: fixed; 
             bottom: 0; 
             left: 0; 
             width: 100%; 
-            background: rgba(255, 255, 255, 0.9); 
+            background: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             z-index: 100; 
@@ -50,7 +48,6 @@
         .mobile-nav a { font-size: 10px; color: #6B7280; text-decoration: none; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
         .mobile-nav a:active { color: var(--mit-red); }
 
-        /* 카드 및 레이아웃 스타일 */
         .course-card { 
             background: #FFFFFF;
             border-radius: 18px;
@@ -87,11 +84,11 @@
 <body class="text-gray-900">
 
     <nav class="mobile-nav">
-        <a href="#stage1">Freshman</a>
-        <a href="#stage2">Sophomore</a>
-        <a href="#stage3">Junior</a>
-        <a href="#stage4">Senior</a>
-        <a href="#stage5">Grad</a>
+        <a href="#stage1">I. Freshman</a>
+        <a href="#stage2">II. Sophomore</a>
+        <a href="#stage3">III. Junior</a>
+        <a href="#stage4">IV. Senior</a>
+        <a href="#stage5">V. Grad</a>
     </nav>
 
     <div class="pb-32">
@@ -105,55 +102,64 @@
 
         <main class="max-w-3xl mx-auto px-6 pt-10 space-y-16">
             <section id="stage1">
-                <div class="stage-header">
-                    <h2 class="text-2xl font-extrabold">Phase I: Freshman Foundation</h2>
-                </div>
+                <div class="stage-header"><h2 class="text-2xl font-extrabold">Phase I: Freshman</h2></div>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/" target="_blank" class="course-card">
-                        <span class="badge b-cs">CS 6.001</span>
-                        <h3 class="font-bold text-lg mt-3">SICP</h3>
-                        <p class="text-xs text-gray-500 mt-2 font-medium">Structure & Interpretation of Computer Programs.</p>
+                        <span class="badge b-cs">CS 6.001</span><h3 class="font-bold text-lg mt-3">SICP</h3><p class="text-xs text-gray-500 mt-2">The zen of software abstraction.</p>
                     </a>
                     <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" target="_blank" class="course-card">
-                        <span class="badge b-math">MATH 18.01</span>
-                        <h3 class="font-bold text-lg mt-3">Calculus I</h3>
-                        <p class="text-xs text-gray-500 mt-2 font-medium">Single Variable Calculus.</p>
+                        <span class="badge b-math">MATH 18.01</span><h3 class="font-bold text-lg mt-3">Calculus I</h3><p class="text-xs text-gray-500 mt-2">Single Variable Calculus.</p>
                     </a>
                     <a href="https://www.nand2tetris.org/" target="_blank" class="course-card border-red-100 bg-red-50">
-                        <span class="badge b-occu">OCCU INTEGRATION</span>
-                        <h3 class="font-bold text-lg mt-3 text-red-900">Nand2Tetris</h3>
-                        <p class="text-xs text-red-800 mt-2 font-medium">Build a Modern Computer from First Principles.</p>
+                        <span class="badge b-occu">OCCU INTEGRATION</span><h3 class="font-bold text-lg mt-3 text-red-900">Nand2Tetris</h3><p class="text-xs text-red-800 mt-2">Logic gates to OS.</p>
                     </a>
                 </div>
             </section>
 
             <section id="stage2">
-                <div class="stage-header">
-                    <h2 class="text-2xl font-extrabold">Phase II: Sophomore Core</h2>
-                </div>
+                <div class="stage-header"><h2 class="text-2xl font-extrabold">Phase II: Sophomore</h2></div>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" class="course-card">
-                        <span class="badge b-cs">CS 6.006</span>
-                        <h3 class="font-bold text-lg mt-3">Intro to Algorithms</h3>
-                        <p class="text-xs text-gray-500 mt-2 font-medium">Sorting, Graphs, and Dynamic Programming.</p>
+                        <span class="badge b-cs">CS 6.006</span><h3 class="font-bold text-lg mt-3">Intro to Algorithms</h3><p class="text-xs text-gray-500 mt-2">Sorting, Graphs, DP.</p>
                     </a>
                     <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" class="course-card">
-                        <span class="badge b-math">MATH 18.06</span>
-                        <h3 class="font-bold text-lg mt-3">Linear Algebra</h3>
-                        <p class="text-xs text-gray-500 mt-2 font-medium">Matrix theory. Essential for Quantum Physics.</p>
+                        <span class="badge b-math">MATH 18.06</span><h3 class="font-bold text-lg mt-3">Linear Algebra</h3><p class="text-xs text-gray-500 mt-2">Matrix theory.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section id="stage3">
+                <div class="stage-header"><h2 class="text-2xl font-extrabold">Phase III: Junior</h2></div>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="https://ocw.mit.edu/courses/8-04-quantum-physics-i-spring-2013/" target="_blank" class="course-card">
+                        <span class="badge b-phys">PHYS 8.04</span><h3 class="font-bold text-lg mt-3">Quantum Physics I</h3><p class="text-xs text-gray-500 mt-2">Schrödinger's equation.</p>
+                    </a>
+                    <a href="https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/" target="_blank" class="course-card">
+                        <span class="badge b-cs">CS 6.033</span><h3 class="font-bold text-lg mt-3">Systems Engineering</h3><p class="text-xs text-gray-500 mt-2">Reliable software systems.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section id="stage4">
+                <div class="stage-header"><h2 class="text-2xl font-extrabold">Phase IV: Senior</h2></div>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/" target="_blank" class="course-card">
+                        <span class="badge b-cs">CS 6.046</span><h3 class="font-bold text-lg mt-3">Design of Algorithms</h3><p class="text-xs text-gray-500 mt-2">Advanced complexity.</p>
+                    </a>
+                    <a href="https://pdos.csail.mit.edu/6.824/" target="_blank" class="course-card border-red-100 bg-red-50">
+                        <span class="badge b-occu">OCCU INTEGRATION</span><h3 class="font-bold text-lg mt-3 text-red-900">Distributed Systems</h3><p class="text-xs text-red-800 mt-2">MIT 6.824 Implementation.</p>
                     </a>
                 </div>
             </section>
 
             <section id="stage5">
-                <div class="stage-header">
-                    <h2 class="text-2xl font-extrabold">Phase V: Graduate Summit</h2>
-                </div>
+                <div class="stage-header"><h2 class="text-2xl font-extrabold">Phase V: Grad Summit</h2></div>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="https://ocw.mit.edu/courses/8-323-relativistic-quantum-field-theory-i-spring-2008/" target="_blank" class="course-card bg-gray-900 text-white border-0">
-                        <span class="badge bg-red-600 text-white">PHYS 8.323</span>
-                        <h3 class="font-bold text-xl mt-3 text-red-200">Quantum Field Theory I</h3>
-                        <p class="text-sm text-gray-400 mt-2">Merging Special Relativity and Quantum Mechanics.</p>
+                        <span class="badge bg-red-600 text-white">PHYS 8.323</span><h3 class="font-bold text-xl mt-3 text-red-200">Quantum Field Theory I</h3><p class="text-sm text-gray-400 mt-2">Special Relativity + QM.</p>
+                    </a>
+                    <a href="https://ocw.mit.edu/courses/8-962-general-relativity-spring-2020/" target="_blank" class="course-card bg-gray-900 text-white border-0">
+                        <span class="badge bg-red-600 text-white">PHYS 8.962</span><h3 class="font-bold text-xl mt-3 text-red-200">General Relativity</h3><p class="text-sm text-gray-400 mt-2">Einstein's theory of gravity.</p>
                     </a>
                 </div>
             </section>

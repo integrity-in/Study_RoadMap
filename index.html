@@ -24,7 +24,6 @@
         body { 
             font-family: 'Inter', sans-serif; 
             scroll-behavior: smooth; 
-            /* 최적화: 상단 노치 및 하단 바 영역 여백 자동 확보 */
             padding-top: env(safe-area-inset-top);
             padding-bottom: env(safe-area-inset-bottom);
             -webkit-tap-highlight-color: transparent;
@@ -38,23 +37,25 @@
             bottom: 0; 
             left: 0; 
             width: 100%; 
-            background: rgba(255, 255, 255, 0.9); 
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             z-index: 100; 
             justify-content: space-evenly; 
-            padding: 12px 0; 
-            border-top: 0.5px solid rgba(0,0,0,0.1); 
-            padding-bottom: calc(12px + env(safe-area-inset-bottom)); 
+            padding: 16px 0; 
+            border-top: 1px solid #E5E7EB; 
+            padding-bottom: calc(16px + env(safe-area-inset-bottom)); 
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
         }
         .mobile-nav a { font-size: 10px; color: #6B7280; text-decoration: none; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
+        .mobile-nav a:active { color: var(--mit-red); }
 
         .course-card { 
             background: #FFFFFF;
-            border-radius: 18px;
+            border-radius: 16px;
             padding: 20px;
             border: 1px solid #F3F4F6;
-            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             display: block;
             text-decoration: none;
             color: inherit;
@@ -65,19 +66,20 @@
             position: sticky; 
             top: env(safe-area-inset-top); 
             z-index: 30; 
-            background: rgba(250,250,250,0.85); 
-            backdrop-filter: blur(15px); 
-            -webkit-backdrop-filter: blur(15px);
-            padding: 16px 0 12px 0;
-            margin-bottom: 20px;
-            border-bottom: 0.5px solid #E5E7EB;
+            background: rgba(250,250,250,0.9); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px 0 12px 0;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #E5E7EB;
         }
 
         .badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px 8px; border-radius: 6px; font-size: 10px; font-weight: 800; }
         .b-cs { background: #ECFDF5; color: #059669; }
         .b-math { background: #EFF6FF; color: #2563EB; }
         .b-phys { background: #FFFBEB; color: #D97706; }
-        
+        .b-occu { background: #991B1B; color: #FFFFFF; }
+
         ::-webkit-scrollbar { display: none; }
     </style>
 </head>
@@ -92,35 +94,52 @@
     </nav>
 
     <div class="pb-32">
-        <header class="bg-white px-6 py-12 border-b border-gray-100">
+        <header class="bg-white px-6 py-16 border-b border-gray-100">
             <div class="max-w-3xl mx-auto">
                 <div class="w-12 h-12 bg-red-800 text-white flex items-center justify-center font-bold text-xl rounded-xl mb-6 shadow-lg italic">MIT</div>
-                <h1 class="text-4xl font-extrabold tracking-tight">The Definitive<br>Scholar Map</h1>
-                <p class="text-gray-500 mt-4 font-medium">MIT Undergraduate Sequence</p>
+                <h1 class="text-4xl font-extrabold tracking-tight leading-tight">The Definitive<br>Scholar Map</h1>
+                <p class="text-gray-500 mt-4 font-medium">MIT Undergraduate Sequence + OCCU Integration</p>
             </div>
         </header>
 
         <main class="max-w-3xl mx-auto px-6 pt-10 space-y-16">
             <section id="stage1">
                 <div class="stage-header">
-                    <h2 class="text-2xl font-extrabold">Phase I: Freshman</h2>
+                    <h2 class="text-2xl font-extrabold">Phase I: Freshman Foundation</h2>
                 </div>
                 <div class="grid grid-cols-1 gap-4">
                     <a href="https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/" target="_blank" class="course-card">
                         <span class="badge b-cs">CS 6.001</span>
                         <h3 class="font-bold text-lg mt-3">SICP</h3>
-                        <p class="text-xs text-gray-500 mt-2">Structure & Interpretation of Computer Programs.</p>
+                        <p class="text-xs text-gray-500 mt-2 font-medium">Structure & Interpretation of Computer Programs.</p>
                     </a>
                     <a href="https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/" target="_blank" class="course-card">
                         <span class="badge b-math">MATH 18.01</span>
                         <h3 class="font-bold text-lg mt-3">Calculus I</h3>
-                        <p class="text-xs text-gray-500 mt-2">Single Variable Calculus.</p>
+                        <p class="text-xs text-gray-500 mt-2 font-medium">Single Variable Calculus.</p>
                     </a>
+                    <div class="course-card border-red-200 bg-red-50">
+                        <span class="badge b-occu">OCCU INTEGRATION</span>
+                        <h3 class="font-bold text-lg mt-3 text-red-900">Nand2Tetris</h3>
+                        <p class="text-xs text-red-800 mt-2 font-medium">Build a Modern Computer from First Principles.</p>
+                    </div>
                 </div>
             </section>
 
+            <section id="stage2">
+                <div class="stage-header">
+                    <h2 class="text-2xl font-extrabold">Phase II: Sophomore Core</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" class="course-card">
+                        <span class="badge b-cs">CS 6.006</span>
+                        <h3 class="font-bold text-lg mt-3">Intro to Algorithms</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-medium">Sorting, Graphs, and Dynamic Programming.</p>
+                    </a>
+                </div>
+            </section>
+            
             </main>
     </div>
-
 </body>
 </html>

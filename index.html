@@ -6,7 +6,7 @@
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="MIT Scholar">
+    <meta name="apple-mobile-web-app-title" content="MIT Roadmap">
     
     <link rel="apple-touch-icon" href="https://via.placeholder.com/180/A31F34/FFFFFF?text=MIT">
     <meta name="theme-color" content="#A31F34">
@@ -24,38 +24,39 @@
         body { 
             font-family: 'Inter', sans-serif; 
             scroll-behavior: smooth; 
+            /* iPhone 14 Pro Dynamic Island 및 하단 바 여백 확보 */
             padding-top: env(safe-area-inset-top);
             padding-bottom: env(safe-area-inset-bottom);
             -webkit-tap-highlight-color: transparent;
             background-color: #FAFAFA;
-            -webkit-user-select: none;
         }
         
+        /* 하단 내비게이션 바 (유리 효과) */
         .mobile-nav { 
             display: flex; 
             position: fixed; 
             bottom: 0; 
             left: 0; 
             width: 100%; 
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             z-index: 100; 
             justify-content: space-evenly; 
             padding: 16px 0; 
-            border-top: 1px solid #E5E7EB; 
+            border-top: 1px solid rgba(0,0,0,0.05); 
             padding-bottom: calc(16px + env(safe-area-inset-bottom)); 
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
         }
         .mobile-nav a { font-size: 10px; color: #6B7280; text-decoration: none; font-weight: 700; text-align: center; text-transform: uppercase; letter-spacing: 0.5px; }
         .mobile-nav a:active { color: var(--mit-red); }
 
+        /* 카드 및 레이아웃 스타일 */
         .course-card { 
             background: #FFFFFF;
-            border-radius: 16px;
+            border-radius: 18px;
             padding: 20px;
             border: 1px solid #F3F4F6;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             display: block;
             text-decoration: none;
             color: inherit;
@@ -66,9 +67,9 @@
             position: sticky; 
             top: env(safe-area-inset-top); 
             z-index: 30; 
-            background: rgba(250,250,250,0.9); 
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(250,250,250,0.85); 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
             padding: 20px 0 12px 0;
             margin-bottom: 24px;
             border-bottom: 1px solid #E5E7EB;
@@ -118,11 +119,11 @@
                         <h3 class="font-bold text-lg mt-3">Calculus I</h3>
                         <p class="text-xs text-gray-500 mt-2 font-medium">Single Variable Calculus.</p>
                     </a>
-                    <div class="course-card border-red-200 bg-red-50">
+                    <a href="https://www.nand2tetris.org/" target="_blank" class="course-card border-red-100 bg-red-50">
                         <span class="badge b-occu">OCCU INTEGRATION</span>
                         <h3 class="font-bold text-lg mt-3 text-red-900">Nand2Tetris</h3>
                         <p class="text-xs text-red-800 mt-2 font-medium">Build a Modern Computer from First Principles.</p>
-                    </div>
+                    </a>
                 </div>
             </section>
 
@@ -136,10 +137,27 @@
                         <h3 class="font-bold text-lg mt-3">Intro to Algorithms</h3>
                         <p class="text-xs text-gray-500 mt-2 font-medium">Sorting, Graphs, and Dynamic Programming.</p>
                     </a>
+                    <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/" target="_blank" class="course-card">
+                        <span class="badge b-math">MATH 18.06</span>
+                        <h3 class="font-bold text-lg mt-3">Linear Algebra</h3>
+                        <p class="text-xs text-gray-500 mt-2 font-medium">Matrix theory. Essential for Quantum Physics.</p>
+                    </a>
                 </div>
             </section>
-            
-            </main>
+
+            <section id="stage5">
+                <div class="stage-header">
+                    <h2 class="text-2xl font-extrabold">Phase V: Graduate Summit</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-4">
+                    <a href="https://ocw.mit.edu/courses/8-323-relativistic-quantum-field-theory-i-spring-2008/" target="_blank" class="course-card bg-gray-900 text-white border-0">
+                        <span class="badge bg-red-600 text-white">PHYS 8.323</span>
+                        <h3 class="font-bold text-xl mt-3 text-red-200">Quantum Field Theory I</h3>
+                        <p class="text-sm text-gray-400 mt-2">Merging Special Relativity and Quantum Mechanics.</p>
+                    </a>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
